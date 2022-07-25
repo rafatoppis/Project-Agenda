@@ -1,0 +1,61 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Agenda</h1>
+      <p class="text-center lead">Sign in or Sign up</p>
+
+      <%- include('includes/messages'); %>
+
+      <div class="row">
+        <div class="col-lg">
+          <h4>Sign up</h4>
+          <p>Fill the form below to create an account.</p>
+
+          <form action="/login/register" method='POST'>
+            <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+            <div class="form-group">
+              <label>Your Mail</label>
+              <input type="email" class="form-control" name="email" placeholder="Enter you mail">
+              <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label>Your Password</label>
+              <input type="password" class="form-control" name="password" placeholder="******">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Account</button>
+          </form>
+        </div>
+
+        <div class="col-lg">
+          <h4>Login</h4>
+          <div class="row">
+            <div class="col-lg">
+              <p>Login if you have an account.</p>
+    
+              <form action="/login/login" method='POST'>
+                <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+                <div class="form-group"> 
+                  <label>Your Mail</label>
+                  <input type="email" class="form-control" name="email" placeholder="Enter you mail">
+                  <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label>Your Password</label>
+                  <input type="password" class="form-control" name="password" placeholder="******">
+                </div>
+    
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<%- include('includes/footer') %>
