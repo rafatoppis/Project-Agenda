@@ -42,7 +42,7 @@ const routes = require('./routes');
 const path = require('path');
 
 // Helmet é recomendação do pessoal do express para segurança. Ler docs.
-const helmet = require('helmet');
+//const helmet = require('helmet');
 
 // São os CSRF Tokens para os formulários, para previnir Injections nos Forms.
 // CSRF Coss site request Forgery
